@@ -1,0 +1,26 @@
+<%= render 'shared/navbar' %>
+
+<h2 style="text-align:center">Contents</h2>
+
+<div class="card-container">
+  <% @posts.each do |post| %>
+    <div class="card">
+      <h2><%= post.title %></h2>
+      <p><%= post.resume %></p>
+      <p><a href='posts/<%=post.sid%>'>read the full post</a></p>
+    </div>
+  <% end %>
+</div>
+
+<%= render 'shared/footer' %>
+
+<script>
+function clickFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>

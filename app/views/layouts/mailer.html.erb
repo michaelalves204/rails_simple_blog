@@ -1,13 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <style>
-      /* Email styles need to be inline */
-    </style>
-  </head>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-dPpxzVH4qOzn3RWVfV8F9ggyI7rViTfK91WO3ObHpnBLfN4J9Gp0hSOxmXeNAeXp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-  <body>
-    <%= yield %>
-  </body>
+<div class="topnav" id="myTopnav">
+  <a href="#home" class="active">Home</a>
+  <a href="#posts">posts</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<h2 style="text-align:center">Product Card</h2>
+
+<div class="card-container">
+  <div class="card">
+    <h2>Ruby / Rails</h2>
+    <p>Conteudo sobre ruby on rails</p>
+  </div>
+  <div class="card">
+    <h2>Elixir</h2>
+    <p>Conteudo sobre elixir.</p>
+  </div>
+
+  <div class="card">
+    <h2>Algoritmo</h2>
+    <p>Conteudo sobre algoritmo</p>
+  </div>
+</div>
+
+<div class="footer">
+  <a href="https://www.linkedin.com/seuperfil" target="_blank" rel="noopener noreferrer">Linkedin</a>
+  <br>
+  <a href="https://github.com/seuusuario" target="_blank" rel="noopener noreferrer">Github</a>
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+</body>
 </html>
