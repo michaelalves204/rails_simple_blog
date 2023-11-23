@@ -7,6 +7,7 @@ class CreatePosts < ActiveRecord::Migration[7.1]
       t.string :resume, null: false
       t.text :content, null: false
       t.string :sid, null: false
+      t.string :image_url
 
       t.timestamps
     end
