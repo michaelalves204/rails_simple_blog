@@ -1,0 +1,27 @@
+version: "2"
+
+services:
+  rails_simple_blog_postgres:
+    image: postgres:12.14-alpine
+    container_name: rails_simple_blog_postgres
+    volumes:
+      - ./docker/db:/var/lib/postgresql@12/data:rw
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+    ports:
+      - "5434:5432"
+    mem_limit: 512mb
+
+  rails_simple_blog_app:
+    build:
+      context: .
+      dockerfile: docker/dev.Dockerfile
+    image: rails_simple_blog
+    container_name: rails_simple_blog
+    command: /bin/bash
+    tty: true
+    volumes:
+      - .:/rails_simple_blog
+    ports:
+      - "3000:3000"
+    mem_limit: 512mb
